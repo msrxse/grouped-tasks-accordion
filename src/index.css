@@ -64,7 +64,7 @@
 /* Add satoshi font */
 @font-face {
   font-family: satoshi;
-  src: url('../fonts/satoshi-Medium.otf');
+  src: url('../public/fonts/satoshi-Medium.otf');
 }
 
 .satoshi {
