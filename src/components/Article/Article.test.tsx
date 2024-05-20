@@ -1,4 +1,3 @@
-import { screen } from '@testing-library/react'
 import { HttpResponse, http } from 'msw'
 
 import { server } from '@/mocks/node'
@@ -21,7 +20,6 @@ describe('Article', () => {
 
   it('should render Article', async () => {
     const result = renderWithQueryClient(<Article {...props} />)
-    screen.debug()
     const team01 = await result.findByText(/Powerful asynchronous state management/i)
     expect(team01).toBeInTheDocument()
   })

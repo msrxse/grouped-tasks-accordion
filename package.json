@@ -11,12 +11,12 @@
     "preview": "vite preview",
     "test": "vitest",
     "lint": "eslint src --no-inline-config --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "npm run lint -- --fix",
+    "lint:fix": "bun run lint -- --fix",
     "lint:css": "stylelint **/*.css --aei --color",
     "prettier": "prettier src --check",
-    "prettier:fix": "npm run prettier -- --write",
-    "format": "npm run prettier && npm run lint",
-    "format:fix": "npm run prettier:fix && npm run lint:fix",
+    "prettier:fix": "bun run prettier -- --write",
+    "format": "bun run prettier && bun run lint",
+    "format:fix": "bun run prettier:fix && bun run lint:fix",
     "build": "tsc -p tsconfig.prod.json && vite build"
   },
   "dependencies": {
@@ -47,11 +47,10 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "happy-dom": "^12.10.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "msw": "^2.0.11",
+    "msw": "^2.3.0",
     "prettier": "^3.1.1",
     "stylelint": "^16.1.0",
     "stylelint-config-prettier": "^9.0.5",
@@ -62,7 +61,9 @@
     "vitest": "^1.0.1"
   },
   "msw": {
-    "workerDirectory": "public"
+    "workerDirectory": [
+      "public"
+    ]
   },
   "browserslist": {
     "production": [

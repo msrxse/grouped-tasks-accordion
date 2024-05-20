@@ -8,7 +8,7 @@ interface ArticleProps {
 }
 
 export default function Article({ selected }: ArticleProps) {
-  const { isPending, error, data } = useArticles()
+  const { isPending, error } = useArticles()
 
   if (isPending) return 'Loading...'
 

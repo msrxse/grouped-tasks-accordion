@@ -10,8 +10,8 @@ body {
   font-family: 'Helvetica Neue', Tahoma, Geneva, Verdana, sans-serif;
 
   button,
-  input[type="submit"],
-  input[type="reset"] {
+  input[type='submit'],
+  input[type='reset'] {
     background: none;
     color: inherit;
     border: none;
@@ -20,7 +20,6 @@ body {
     cursor: pointer;
     outline: inherit;
   }
-
 }
 
 * {
