@@ -34,4 +34,4 @@ pnpm test:watch <path-to-file>
 - **ESLint and Prettier:** For linting and pretty-printing JavaScript code respectively
 - **Jest and @testing-library/react:** for unit testing
 - **Vitest:** Modern testing framework
-- **Tailwind:** Utility classes help you work within the constraints of a system
+- **Tailwind:** CSS Utility classes help you work within the constraints of a system instead of littering your stylesheets with arbitrary values. They make it easy to be consistent with color choices, spacing, typography, shadows, and everything else that makes up a well-engineered design system.
