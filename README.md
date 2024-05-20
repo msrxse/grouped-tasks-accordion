@@ -10,9 +10,14 @@ pnpm run dev
 
 Next, open your browser and visit http://localhost:5173/. The default React project will be running on port 5173.
 
+### Note:
+
+    if running `antfu.vite` and `antfu.browse-lite`, vite server will start itself at port 4000.
+
 ## Tests
 
-```pnpm test:watch
+```
+pnpm test:watch
 
 ```
 
@@ -32,10 +37,9 @@ pnpm test:watch <path-to-file>
 - **Vitest:** Modern testing framework
 - **MSW:** Mock Service Worker (MSW) is an API mocking library for browser and Node.js. See [stop mocking fetch](https://kentcdodds.com/blog/stop-mocking-fetch). With MSW, you can intercept outgoing requests, observe them, and respond to them using mocked responses. MSW can integrate throughout your entire stack, allowing you to reuse and customize network behavior on demand. Imagine using the same API mocks during development, integration and end-to-end testing, and then in your Storybook or during a live demo.
 
-## TODOS
+## POSSIBLE NEXT TODOS
 
 - [ ] Add commitlint (Helps team adhere to a commit convention)
-- [x] Add 2 col layout with list and article read
 - [ ] Add ContextModule with data and possibility of persistent article edition
 
 ## Useful links
