@@ -1,6 +1,6 @@
 import { BiChevronDown, BiChevronUp, BiDetail } from 'react-icons/bi'
 
-import { Checks, Data } from '@/types/types'
+import { Data } from '@/types/types'
 
 import styles from './Accordion.module.css'
 
@@ -9,15 +9,12 @@ interface AccordionHeaderProps {
   index: number
   onClick: (groupIndex: number) => void
 }
-
+const ALL_CHECKED = false //TODO
 function AccordionHeader({ active, index, onClick }: AccordionHeaderProps) {
   return (
-    <div
-      className={`${styles.accordionTitle} ${active ? styles.accordionActiveTitle : ''}`}
-      onClick={onClick}
-    >
+    <div className={styles.accordionTitle} onClick={onClick}>
       <div className="left">
-        <div className={styles.icon}>
+        <div className={`${styles.icon} ${ALL_CHECKED ? styles.iconActive : ''}`}>
           <BiDetail />
           <span>Group {`${index}`}</span>
         </div>

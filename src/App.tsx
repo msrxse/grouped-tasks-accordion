@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import Accordion from '@/components/Accordion/Accordion'
+import ProgressBar from '@/components/ProgressBar/ProgressBar'
 import useFetch from '@/hooks/useFetch'
 import { Data } from '@/types/types'
 
@@ -42,12 +43,16 @@ export const App = () => {
     <div data-testid="app-id" className={styles.main}>
       {loading && <p>Loading...</p>}
       {tasks && (
-        <Accordion
-          data={tasks}
-          activeIndex={active}
-          handleTask={handleTask}
-          changeActive={toggleActive}
-        />
+        <div className={styles.container}>
+          <p>lodgify grouped tasks</p>
+          <ProgressBar progress={49} />
+          <Accordion
+            data={tasks}
+            activeIndex={active}
+            handleTask={handleTask}
+            changeActive={toggleActive}
+          />
+        </div>
       )}
     </div>
   )

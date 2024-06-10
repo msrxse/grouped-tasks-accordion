@@ -1,13 +1,28 @@
 .main {
-  /* width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
-  height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns:1fr 2fr 1fr;
   grid-template-rows: 200px 1fr 1fr;
-  background: #EEE;
+  background-color: #EEE;
+}
+
+.container {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    padding: 16px;
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    border-radius: 8px;
+    align-self: start;
+}
+
+.container > p {
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #333;
+  text-transform: capitalize;
 }
