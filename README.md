@@ -1,6 +1,6 @@
 # Lodgify Grouped Tasks
 
-Take home exercise for Lodgify. A widget to shows the current progress of the profile creation of an user. Basically an accordion which content are tasks (checkboxes) and checking on those will add to the total percentage displayed on the annexed progressBar.
+Take home exercise for Lodgify. A widget to shows the current progress of the profile creation of an user. Basically an accordion which content are tasks are checkboxes. The user will be able to check and/or uncheck one of the tasks and see the progress bar change and if a group have all the checks it should be marked as green.
 
 To start development server:
 
