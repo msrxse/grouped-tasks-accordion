@@ -12,7 +12,7 @@ Next, open your browser and visit http://localhost:5173/. The default React proj
 
 ### Note:
 
-    if running `antfu.vite` and `antfu.browse-lite`, vite server will start itself at port 4000.
+    if running `antfu.vite` , vite server will start itself at port 4000.
 
 ## Tests
 
@@ -44,12 +44,22 @@ npm test:watch <path-to-file>
 
 ## About accessibility
 
+-
+-
+-
+
 ## About testing
 
 - I have not made many efforts to have tests in this repo because of time. However I have many examples of how to test different types of components under jest and react-testing-library. For example:
 - [Example tests on queries and getQueryData functions from react-query](https://github.com/msrxse/oneport-rates-ui/blob/main/src/hooks/rates.ts)
 - [Example on tests that use Providers](https://github.com/msrxse/oneport-rates-ui/blob/main/src/hooks/rates.ts)
 - [Example tests on components that themselves use hooks](https://github.com/msrxse/oneport-rates-ui/blob/main/src/components/rates/tests/RatesComponent.test.tsx)
+
+## whats missing
+
+-
+-
+-
 
 # Tooling:
 

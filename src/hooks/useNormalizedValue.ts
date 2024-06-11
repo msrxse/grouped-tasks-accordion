@@ -8,9 +8,9 @@ const getSumNormalizedValues = (data: Data[]) =>
   data.reduce((acc, each) => acc + each.tasks.reduce((taskAcc, task) => taskAcc + task.value, 0), 0)
 const getSumCheckedNormalizedValues = (data: Data[]) =>
   data.reduce(
-    (sum, group) =>
-      sum +
-      group.tasks.reduce((taskSum, task) => (task.checked ? taskSum + task.value : taskSum), 0),
+    (acc, group) =>
+      acc +
+      group.tasks.reduce((taskAcc, task) => (task.checked ? taskAcc + task.value : taskAcc), 0),
     0,
   )
 
@@ -46,7 +46,6 @@ function useNormalizedValue() {
     displayedNormalizedValue: 0,
   })
   // NOTE: you *might* need to memoize this value
-  // Learn more in http://kcd.im/optimize-context
   const value = { state, dispatch }
   return value
 }

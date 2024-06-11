@@ -7,12 +7,29 @@ import styles from './Accordion.module.css'
 interface AccordionHeaderProps {
   active: boolean
   index: number
-  onClick: (groupIndex: number) => void
+  onClick: (e: React.MouseEvent<HTMLDivElement>) => void
 }
 const ALL_CHECKED = false //TODO
 function AccordionHeader({ active, index, onClick }: AccordionHeaderProps) {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    // if Space or Enter keys triggered!
+    if (event.code == 'Space' || event.code == 'Enter') {
+      // Trigger the button click
+      document.getElementById(`accordion-${index}-id`)?.click()
+    }
+  }
+
   return (
-    <div className={styles.accordionTitle} onClick={onClick}>
+    <div
+      tabIndex={index}
+      aria-expanded={active}
+      aria-controls={`section-${index}`}
+      id={`accordion-${index}-id`}
+      role="button"
+      className={styles.accordionTitle}
+      onClick={onClick}
+      onKeyDown={handleKeyDown}
+    >
       <div className="left">
         <div className={`${styles.icon} ${ALL_CHECKED ? styles.iconActive : ''}`}>
           <BiDetail />
@@ -56,7 +73,11 @@ function Accordion({ data, activeIndex, handleTask, changeActive }: AccordionPro
             <AccordionHeader active={isActive} index={index} onClick={() => changeActive(index)} />
 
             {isActive ? (
-              <div className={styles.accordionContent}>
+              <div
+                id={`section-${index}`}
+                aria-labelledby={`accordion-${index}-id`}
+                className={styles.accordionContent}
+              >
                 {ar.tasks.map((inner, idx) => (
                   <div className={styles.innerDescription} key={inner.description}>
                     <input
