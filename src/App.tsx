@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import Accordion from '@/components/Accordion/Accordion'
 import ProgressBar from '@/components/ProgressBar/ProgressBar'
 import useFetch from '@/hooks/useFetch'
+import useNormalizedValue from '@/hooks/useNormalizedValue'
 import { Data } from '@/types/types'
 
 import styles from './App.module.css'
@@ -12,14 +13,24 @@ const API_URL =
 
 export const App = () => {
   const { data, loading, error } = useFetch(API_URL)
+  const {
+    state: { displayedNormalizedValue, totalNormalizedValue },
+    dispatch,
+  } = useNormalizedValue()
   const [tasks, setTasks] = useState<Data[]>([])
   const [active, setActive] = useState<number>(-1)
 
   useEffect(() => {
     if (data.length && !error) {
+      // save the data to own state
       setTasks(data)
+      // calculate normalized value
+      dispatch({
+        type: 'init',
+        payload: data,
+      })
     }
-  }, [data, error])
+  }, [data, dispatch, error])
 
   const toggleActive = (act: number) => {
     if (active === act) {
@@ -34,7 +45,13 @@ export const App = () => {
     updatedTasks[groupIndex].tasks[taskIndex].checked =
       !updatedTasks[groupIndex].tasks[taskIndex].checked
     setTasks(updatedTasks)
+    // also dispatch to save the new normalized values
+    dispatch({
+      type: 'get',
+      payload: updatedTasks,
+    })
   }
+
   if (error) {
     return <p>An error has ocurred</p>
   }
@@ -45,7 +62,7 @@ export const App = () => {
       {tasks && (
         <div className={styles.container}>
           <p>lodgify grouped tasks</p>
-          <ProgressBar progress={49} />
+          <ProgressBar progress={displayedNormalizedValue} />
           <Accordion
             data={tasks}
             activeIndex={active}
