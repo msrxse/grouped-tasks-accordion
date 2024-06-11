@@ -14,7 +14,7 @@ const API_URL =
 export const App = () => {
   const { data, loading, error } = useFetch(API_URL)
   const {
-    state: { displayedNormalizedValue, totalNormalizedValue },
+    state: { displayedNormalizedValue },
     dispatch,
   } = useNormalizedValue()
   const [tasks, setTasks] = useState<Data[]>([])
