@@ -6,11 +6,12 @@ import styles from './Accordion.module.css'
 
 interface AccordionHeaderProps {
   active: boolean
+  isAllChecked: boolean
   index: number
   onClick: (e: React.MouseEvent<HTMLDivElement>) => void
 }
-const ALL_CHECKED = false //TODO
-function AccordionHeader({ active, index, onClick }: AccordionHeaderProps) {
+
+function AccordionHeader({ active, isAllChecked, index, onClick }: AccordionHeaderProps) {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     // if Space or Enter keys triggered!
     if (event.code == 'Space' || event.code == 'Enter') {
@@ -31,7 +32,7 @@ function AccordionHeader({ active, index, onClick }: AccordionHeaderProps) {
       onKeyDown={handleKeyDown}
     >
       <div className="left">
-        <div className={`${styles.icon} ${ALL_CHECKED ? styles.iconActive : ''}`}>
+        <div className={`${styles.icon} ${isAllChecked ? styles.iconActive : ''}`}>
           <BiDetail />
           <span>Group {`${index}`}</span>
         </div>
@@ -68,9 +69,16 @@ function Accordion({ data, activeIndex, handleTask, changeActive }: AccordionPro
     <div className={styles.accordion}>
       {data.map((ar, index) => {
         const isActive = index === activeIndex
+        const isAllChecked = data[index]?.tasks?.every((task) => task.checked)
+
         return (
           <div className={styles.accordionGroup} key={index}>
-            <AccordionHeader active={isActive} index={index} onClick={() => changeActive(index)} />
+            <AccordionHeader
+              active={isActive}
+              isAllChecked={isAllChecked}
+              index={index}
+              onClick={() => changeActive(index)}
+            />
 
             {isActive ? (
               <div

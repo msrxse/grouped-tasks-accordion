@@ -1,6 +1,6 @@
 # Lodgify Grouped Tasks
 
-Take home exercise for Lodgify. A widget to shows the current progress of the profile creation of an user. Basically an accordion which content are tasks (checkboxes) and checking on those will add to the total percentage displayed on annexed progressBar.
+Take home exercise for Lodgify. A widget to shows the current progress of the profile creation of an user. Basically an accordion which content are tasks (checkboxes) and checking on those will add to the total percentage displayed on the annexed progressBar.
 
 To start development server:
 
@@ -32,34 +32,44 @@ npm test:watch <path-to-file>
 
 ## General architecture and scaffolding
 
-- Initial scaffolding is a repo of mine that I use for very small personal projects. [here](https://github.com/msrxse/default-scaffold-basic). Removed Tailwind to showcase CSS with CS-modules.
-- Very simple just all starts on App.tsx and the components folder have 2 components: Accordion and ProgressBar. Other important file are hook folder with, hooks to retrieve data and to calculate progressBar output from fetched data and user actions.
+- Initial scaffolding is a repo of mine that I use for very small personal projects. [here](https://github.com/msrxse/default-scaffold-basic). Removed Tailwind to showcase CSS with `CSS-modules`.
+- Very simple just all starts on `App.tsx` and in the components folder are 2 components: `Accordion` and `ProgressBar`. Other important file are in the hooks folder, hooks to retrieve data and to calculate progressBar output from fetched data and user actions.
 
 ## About state
 
-- In term os state there are 2 approaches i could take and I did settle in one, pregardless of performance and in a team setting this could have been something to set to discuss.
-  1- One approach could have been, to normalize all feetched data from API to also include the normalized sum of all values, and the specific normalize value of a task. And then result data shape saved to local state, user actions would only mean to retrieve the normalized value of the task from the state itself, then to total normalized also from the store. finalizing with makig sure you update the original stored data object itself.
+- In term of state there are 2 approaches I could take and I did settle in one, regardless of performance and in a team setting this could have been something set to discuss.
+  1- One approach could have been, to normalize all fetched data from API to also include the normalized sum of all values, and the specific normalize value of a task. And then the resulted data shape saved to local state, user actions would only mean to retrieve the normalized value of the task from the state itself, then to also access the total normalized value from the store. Finalizing with making sure you update the original stored data object itself.
   2- Second approach, and the one taken here, is: Instead save to local state fetched data as is. Then, we run actions to calculate initial normalized needed values. Then, as the user click tasks, call to update that state, we also need here to update the initial saved data.
   None is better than the other and a discussion could have been done to choose one approach over the other. Most probably reviewing performance and rerenders will help decide whats best.
 
 ## About accessibility
 
--
--
--
+- Followed all not optional accessibility features for an accordion as stated in [w3.org/WAI/ARIA/apg/patterns/accordion](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/).
+- In terms of keyboard interactions:
+  1- `Enter` and `Space` expands/collapses the focused accordion header
+  2- `Tab` circles through all headers, `Shift` and `Tab` circles backwards
+- In terms of `WAI-AIRA` roles:
+  1- Accordion header has element with role=button
+  2- Correct usage of `aria-expanded` set to the visibility of expanded content
+  3- `Aria-control` of the header linked to the `id` of the expanded content
+  4- `Id` of header linked to the `aria-labelledby` of the expanded content
+  In addition to the accessibility measures described here, I currently use a static lint checker for accessibility rules on JSX elements. [That is eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
 
 ## About testing
 
-- I have not made many efforts to have tests in this repo because of time. However I have many examples of how to test different types of components under jest and react-testing-library. For example:
+- I have not made many efforts to have tests in this repo because of time. However I have many examples of how to test different types of components under jest and the react-testing-library lib. For example:
 - [Example tests on queries and getQueryData functions from react-query](https://github.com/msrxse/oneport-rates-ui/blob/main/src/hooks/rates.ts)
 - [Example on tests that use Providers](https://github.com/msrxse/oneport-rates-ui/blob/main/src/hooks/rates.ts)
 - [Example tests on components that themselves use hooks](https://github.com/msrxse/oneport-rates-ui/blob/main/src/components/rates/tests/RatesComponent.test.tsx)
 
 ## whats missing
 
--
--
--
+- Some CSS mismatches. Eg. checkbox not correct styles. Missing correctly applying font globally to the project, instead given to tags here and there.
+- Icons are not quite as in the designs
+- Missing tests, I just didnt have time for any and instead focused on accessibility since it seemed more important
+- Missing accessibility for checkboxes, also missing a good user-experience on those (user cant toggle checkbox from the keyboard)
+- State management might not be ideal, would need a performance review on that. Looking at wasted rerenders and user experience in general
+- Proper `empty states` and `error states` are not implemented
 
 # Tooling:
 
