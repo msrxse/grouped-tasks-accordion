@@ -70,6 +70,7 @@ npm test:watch <path-to-file>
 - Missing accessibility for checkboxes, also missing a good user-experience on those (user cant toggle checkbox from the keyboard)
 - State management might not be ideal, would need a performance review on that. Looking at wasted rerenders and user experience in general
 - Proper `empty states` and `error states` are not implemented
+- Animations: There are no animations at the moment and with a little more time I could have apply them
 
 # Tooling:
 

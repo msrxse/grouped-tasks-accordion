@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   padding: 0;
-  border: 1px solid #DDD;
+  border: 1px solid #ddd;
   border-bottom: none;
 }
 
@@ -14,7 +14,7 @@
 .accordionGroup:last-of-type {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #ddd;
 }
 
 .accordionTitle {
@@ -26,8 +26,6 @@
   cursor: pointer;
 }
 
-
-
 .icon {
   display: flex;
   justify-content: space-between;
@@ -35,13 +33,13 @@
 }
 
 .icon > span {
-font-family: 'Source Sans 3';
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 28px;
-color: #333;
-margin-left: 5px;
+  font-family: 'Source Sans 3';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #333;
+  margin-left: 5px;
 }
 
 .iconActive {
@@ -50,11 +48,11 @@ margin-left: 5px;
   font-weight: 400;
   font-size: 18px;
   line-height: 28px;
-  color: #02BC9C;
+  color: #02bc9c;
 }
 
 .iconActive > span {
-  color: #02BC9C;
+  color: #02bc9c;
 }
 
 .handler {
@@ -110,6 +108,5 @@ margin-left: 5px;
 }
 
 .innerDescription input:checked {
-  accent-color: #02BC9C;
+  accent-color: #02bc9c;
 }
-

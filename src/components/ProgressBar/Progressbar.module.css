@@ -1,12 +1,12 @@
 .progressbar {
-  background: #E6FDF9;
+  background: #e6fdf9;
   border-radius: 24px;
   margin-bottom: 0.75em;
 }
 
 .progressInner {
   padding: 2px 16px 2px 0;
-  background: #02BC9C;
+  background: #02bc9c;
   border-radius: 16px;
   font-family: 'Source Sans 3';
   font-style: normal;
@@ -14,5 +14,5 @@
   font-size: 16px;
   line-height: 20px;
   text-align: right;
-  color: #E6FDF9;
+  color: #e6fdf9;
 }
