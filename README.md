@@ -72,6 +72,15 @@ npm test:watch <path-to-file>
 - Proper `empty states` and `error states` are not implemented
 - Animations: There are no animations at the moment and with a little more time I could have apply them
 
+## Images
+
+| Closed accordion                                                 | Open accordion                                                   |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| <img src="src/assets/lodgify-grouped-tasks-1.png" width="600" /> | <img src="src/assets/lodgify-grouped-tasks-2.png" width="600" /> |
+
+- Video shows `Tab` and `Shift + Tab` keyboard navigation
+  ![video 1](src/assets/lodgify-46A0-4635-96D6-61B77877315D.gif)
+
 # Tooling:
 
 - **Vite:** Frontend build tool that serves your source files over native ES modules, with rich features and fast _Hot Module Replacement (HMR)_. _Vite_ is fast because it doesn't bundle your code at all. It leverages the native support for ESM (ECMAScript Modules) of modern browsers. It sends your file directly without being bundled
