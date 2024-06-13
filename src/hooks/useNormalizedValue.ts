@@ -14,7 +14,7 @@ const getSumCheckedNormalizedValues = (data: Data[]) =>
     0,
   )
 
-function normalizedValueReducer(state: State, action: Action) {
+function normalizedValueReducer(state: State, action: Action): State {
   switch (action.type) {
     case 'init': {
       const sumNormalizedValues = getSumNormalizedValues(action.payload)
@@ -35,7 +35,7 @@ function normalizedValueReducer(state: State, action: Action) {
       }
     }
     default: {
-      throw new Error(`Unhandled action type: ${action.type}`)
+      return state
     }
   }
 }
