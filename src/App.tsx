@@ -8,17 +8,17 @@ import { Data } from '@/types/types'
 
 import styles from './App.module.css'
 
-const API_URL =
-  'https://gist.githubusercontent.com/huvber/ba0d534f68e34f1be86d7fe7eff92c96/raw/98a91477905ea518222a6d88dd8b475328a632d3/mock-progress'
+const API_URL = 'data.json'
 
 export const App = () => {
-  const { data, loading, error } = useFetch(API_URL)
+  const { data: jsonData, loading, error } = useFetch(API_URL)
   const {
     state: { displayedNormalizedValue },
     dispatch,
   } = useNormalizedValue()
   const [tasks, setTasks] = useState<Data[]>([])
   const [active, setActive] = useState<number>(-1)
+  const data = jsonData.data || []
 
   useEffect(() => {
     if (data.length && !error) {
@@ -61,7 +61,7 @@ export const App = () => {
       {loading && <p>Loading...</p>}
       {tasks && (
         <div className={styles.container}>
-          <p>lodgify grouped tasks</p>
+          <p>Grouped Tasks Accordion</p>
           <ProgressBar progress={displayedNormalizedValue} />
           <Accordion
             data={tasks}

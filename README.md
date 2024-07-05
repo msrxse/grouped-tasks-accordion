@@ -1,6 +1,6 @@
-# Lodgify Grouped Tasks
+# Grouped Tasks Accordion
 
-Take home exercise for Lodgify. A widget to shows the current progress of the profile creation of an user. Basically an accordion which content are tasks _(checkboxes)_. The user will be able to check/uncheck one of the tasks and see the progress bar change and if a group has all checked it should be marked in green.
+A widget to shows the current progress of the profile creation of an user. Basically an accordion which content are tasks _(checkboxes)_. The user will be able to check/uncheck one of the tasks and see the progress bar change and if a group has all checked it should be marked in green.
 
 To start development server:
 
@@ -77,12 +77,12 @@ npm test:watch <path-to-file>
 
 ## Images
 
-| Closed accordion                                                 | Open accordion                                                   |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| <img src="src/assets/lodgify-grouped-tasks-1.png" width="600" /> | <img src="src/assets/lodgify-grouped-tasks-2.png" width="600" /> |
+| Closed accordion                                                   | Open accordion                                                     |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| <img src="src/assets/grouped-tasks-accordion-1.png" width="600" /> | <img src="src/assets/grouped-tasks-accordion-2.png" width="600" /> |
 
 - Video shows `Tab` and `Shift + Tab` keyboard navigation
-  ![video 1](src/assets/lodgify-46A0-4635-96D6-61B77877315D.gif)
+  ![video 1](src/assets/grouped-tasks-accordion-46A0-4635-96D6-61B77877315D.gif)
 
 # Tooling:
 
