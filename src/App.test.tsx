@@ -4,10 +4,9 @@ import App from '@/App'
 
 describe('RatesHeader', () => {
   const props = {}
-  test('should show title', async () => {
+  test('should show app', async () => {
     render(<App {...props} />)
-    const title = screen.getByTestId('app-id')
 
-    expect(title).toBeInTheDocument()
+    expect(screen.getByTestId('app-id')).toBeInTheDocument()
   })
 })

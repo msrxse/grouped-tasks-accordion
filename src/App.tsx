@@ -11,14 +11,13 @@ import styles from './App.module.css'
 const API_URL = 'data.json'
 
 export const App = () => {
-  const { data: jsonData, loading, error } = useFetch(API_URL)
+  const { data, loading, error } = useFetch(API_URL)
   const {
     state: { displayedNormalizedValue },
     dispatch,
   } = useNormalizedValue()
   const [tasks, setTasks] = useState<Data[]>([])
   const [active, setActive] = useState<number>(-1)
-  const data = jsonData.data || []
 
   useEffect(() => {
     if (data.length && !error) {
@@ -30,7 +29,7 @@ export const App = () => {
         payload: data,
       })
     }
-  }, [data, dispatch, error])
+  }, [dispatch, error, data])
 
   const toggleActive = (act: number) => {
     if (active === act) {

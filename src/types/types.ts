@@ -7,5 +7,8 @@ interface Data {
   name: string
   tasks: Checks[]
 }
+interface JsonData {
+  data: Data[]
+}
 
-export type { Checks, Data }
+export type { Checks, JsonData, Data }
