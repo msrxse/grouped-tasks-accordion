@@ -2,6 +2,16 @@
 
 A widget to shows the current progress of the profile creation of an user. Basically an accordion which content are tasks _(checkboxes)_. The user will be able to check/uncheck one of the tasks and see the progress bar change and if a group has all checked it should be marked in green.
 
+## Images
+
+| Closed accordion                                             | Open accordion                                              |
+| ------------------------------------------------------------ | ----------------------------------------------------------- |
+| <img src="src/assets/grouped-tasks-close.png" width="800" /> | <img src="src/assets/grouped-tasks-open.png" width="800" /> |
+
+
+https://github.com/user-attachments/assets/b23a5fe6-b942-40ef-bd0e-a701eecfcf78
+
+
 To start development server:
 
 ```
@@ -75,11 +85,6 @@ npm test:watch <path-to-file>
 - Proper `empty states` and `error states` are not implemented
 - Animations: There are no animations at the moment and with a little more time I could have applied them
 
-## Images
-
-| Closed accordion                                             | Open accordion                                              |
-| ------------------------------------------------------------ | ----------------------------------------------------------- |
-| <img src="src/assets/grouped-tasks-close.png" width="800" /> | <img src="src/assets/grouped-tasks-open.png" width="800" /> |
 
 # Tooling:
 
