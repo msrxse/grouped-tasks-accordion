@@ -77,12 +77,9 @@ npm test:watch <path-to-file>
 
 ## Images
 
-| Closed accordion                                                   | Open accordion                                                     |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| <img src="src/assets/grouped-tasks-accordion-1.png" width="600" /> | <img src="src/assets/grouped-tasks-accordion-2.png" width="600" /> |
-
-- Video shows `Tab` and `Shift + Tab` keyboard navigation
-  ![video 1](src/assets/grouped-tasks-accordion-46A0-4635-96D6-61B77877315D.gif)
+| Closed accordion                                             | Open accordion                                              |
+| ------------------------------------------------------------ | ----------------------------------------------------------- |
+| <img src="src/assets/grouped-tasks-close.png" width="800" /> | <img src="src/assets/grouped-tasks-open.png" width="800" /> |
 
 # Tooling:
 
